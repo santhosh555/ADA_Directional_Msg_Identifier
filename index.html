@@ -22,7 +22,7 @@
 	$(document).ready(function () {
 		$('body *').each(function (index, elem) {
 			let text = $(elem).clone().children().remove().end().text();
-			let regEx = /(below|above|click|right|left|down)/gi;
+			let regEx = /(below|above|click|left|down)/gi;
 			text.match(regEx) ? $(elem).css({ backgroundColor: 'red', color: 'white' }) : null;
 		})
 	})
