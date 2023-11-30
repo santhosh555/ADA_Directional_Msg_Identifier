@@ -5,27 +5,58 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Directional Messages ADA</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
 		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
-	<div>
-		text
-		<div>Refer below</div>
-		<p>see </p>
-	</div>
+	<h1>ADA Directional Message Identifier</h1>
+	<div>temp click  </div>
+	<p>To enable this drag the following link to bookmarks bar 
+		<a href="javascript:(function () {
+			let scriptRef = document.createElement('script');
+			scriptRef.setAttribute('src', 'https://code.jquery.com/jquery-3.7.1.min.js');
+			let headRef = document.getElementsByTagName('head')[0];
+			headRef.appendChild(scriptRef);
+			$(document).ready(function () {
+				$('body *').each(function (index, elem) {
+					let text = $(elem).clone().children().remove().end().text();
+					let regEx = /(below|above|click|left|down)/gi;
+					if(text.match(regEx) && elem.tagName !== 'SCRIPT') {
+						$(elem).css({ backgroundColor: 'red', color: 'white' });
+						$(elem).addClass('ADA_Directional');	
+					}
+				});
+				let matchCount = $('.ADA_Directional').length;
+				alert(`Found ${matchCount} violations relates to directional messages`);
+			})
+		})();">Direcional Msg Scan</a>
+	</p>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
 	integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script>
-	$(document).ready(function () {
-		$('body *').each(function (index, elem) {
-			let text = $(elem).clone().children().remove().end().text();
-			let regEx = /(below|above|click|left|down)/gi;
-			text.match(regEx) ? $(elem).css({ backgroundColor: 'red', color: 'white' }) : null;
+	(function () {
+		return;
+		let scriptRef = document.createElement('script');
+		scriptRef.setAttribute('src', 'https://code.jquery.com/jquery-3.7.1.min.js');
+		let headRef = document.getElementsByTagName('head')[0];
+		headRef.appendChild(scriptRef);
+		$(document).ready(function () {
+			$('body *').each(function (index, elem) {
+				let text = $(elem).clone().children().remove().end().text();
+				let regEx = /(below|above|click|left|down)/gi;
+				if(text.match(regEx) && elem.tagName !== 'SCRIPT') {
+					$(elem).css({ backgroundColor: 'red', color: 'white' })
+					$(elem).addClass('ADA_Directional');
+				}
+			});
+			let matchCount = $('.ADA_Directional').length;
+			alert(`Found ${matchCount} violations relates to directional messages`);
 		})
-	})
+	})();
 </script>
 
 </html>
