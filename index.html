@@ -22,8 +22,8 @@
 			$(document).ready(function () {
 				$('body *').each(function (index, elem) {
 					let text = $(elem).clone().children().remove().end().text();
-					let regEx = /(below|above|click|left|down)/gi;
-					if(text.match(regEx) && elem.tagName !== 'SCRIPT') {
+					let regEx = /(below|above|click|left)/gi;
+					if(text.match(regEx) && elem.tagName !== 'SCRIPT' && elem.tagName !== 'STYLE') {
 						$(elem).css({ backgroundColor: 'red', color: 'white' });
 						$(elem).addClass('ADA_Directional');	
 					}
@@ -39,7 +39,6 @@
 	integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script>
 	(function () {
-		return;
 		let scriptRef = document.createElement('script');
 		scriptRef.setAttribute('src', 'https://code.jquery.com/jquery-3.7.1.min.js');
 		let headRef = document.getElementsByTagName('head')[0];
@@ -47,8 +46,8 @@
 		$(document).ready(function () {
 			$('body *').each(function (index, elem) {
 				let text = $(elem).clone().children().remove().end().text();
-				let regEx = /(below|above|click|left|down)/gi;
-				if(text.match(regEx) && elem.tagName !== 'SCRIPT') {
+				let regEx = /(below|above|click|left)/gi;
+				if(text.match(regEx) && elem.tagName !== 'SCRIPT' && elem.tagName !== 'STYLE') {
 					$(elem).css({ backgroundColor: 'red', color: 'white' })
 					$(elem).addClass('ADA_Directional');
 				}
